@@ -8,7 +8,7 @@ import com.example.mvvmsample.data.db.entities.Quote
 import com.example.mvvmsample.data.network.MyApi
 import com.example.mvvmsample.data.network.SafeApiRequest
 import com.example.mvvmsample.data.network.responses.QuotesResponse
-import com.example.mvvmsample.data.preferences.PreferenceProvider
+import com.example.mvvmsample.data.preferences.SharedPreferenceHelper
 import com.example.mvvmsample.util.Coroutines
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -18,7 +18,7 @@ import java.time.temporal.ChronoUnit
 class QuotesRepository(
     private val myApi: MyApi,
     private val db: AppDatabase,
-    private val preferences: PreferenceProvider
+    private val preferences: SharedPreferenceHelper
 ) : SafeApiRequest() {
     private val quotes = MutableLiveData<List<Quote>>()
     private val MINIMUM_INTERVAL: Int = 6

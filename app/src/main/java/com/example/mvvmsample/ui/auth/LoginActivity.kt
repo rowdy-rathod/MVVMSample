@@ -48,6 +48,9 @@ class LoginActivity : AppCompatActivity(), KodeinAware {
             startActivity(intent)
         }
 
+
+        binding.textViewSignUp.text="Sunil Rathod"
+
     }
 
     private fun loginUser() {
